@@ -7,11 +7,11 @@
 
 浏览器访问 http://panda.www.net.cn/cgi-bin/check.cgi?area_domain=itdhz.com ，得到下面内容
 
-  <?xml version="1.0" encoding="gb2312"?>
-  <property>
-  <returncode>200</returncode>
-  <key>itdhz.com</key>
-  <original>211 : Domain exists</original>
-  </property>
+    <?xml version="1.0" encoding="gb2312"?>
+    <property>
+    <returncode>200</returncode>
+    <key>itdhz.com</key>
+    <original>211 : Domain exists</original>
+    </property>
 
 返回内容中，状态为 211 表示域名已经被注册， 状态为 210 表示域名可以注册。
