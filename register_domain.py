@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+#-*-coding:utf8-*-
+# Author JaesonCheng
+# Date 2017-05-16
+ 
+import urllib2
+from multiprocessing import Pool as ThreadPool
+import itertools as its
+
+def writelog(mfile,message):
+    with open(mfile,'a+') as f:
+        f.write(message)
+ 
+def createdomain(ws,num,sfx):
+    r = its.product(ws,repeat=num)
+    for i in r:
+        domain = ''.join(i) + sfx
+        yield domain
+
+def checkdomainstatus(domain):
+    API = "http://panda.www.net.cn/cgi-bin/check.cgi?area_domain="
+    url = API + domain
+    xhtml = urllib2.urlopen(url,timeout=5).read()
+    r1 = xhtml.find('211')      # 字符串表示 已经被注册
+    r2 = xhtml.find('210')      # 字符串表示 还未被注册
+    if r2 != -1:
+         writelog('unregisterdomain.txt',domain+'\n')
+    #else:
+    #    if r1 != -1:
+    #        writelog('unknowndomain.txt',domain+'\n')
+    #    else:
+    #        writelog('registerdomain.txt',domain+'\n')
+
+if __name__ == "__main__":
+    words = 'abcdefghijklmnopqrstuvwxyz'
+    len = 5
+    suffix = '.com'
+    domains = createdomain(words,len,suffix)
+    task_pool = ThreadPool(5)
+    results = task_pool.map(checkdomainstatus,domains)
+    task_pool.close()
+    task_pool.join()
