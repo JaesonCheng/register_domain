@@ -20,7 +20,10 @@ def createdomain(ws,num,sfx):
 def checkdomainstatus(domain):
     API = "http://panda.www.net.cn/cgi-bin/check.cgi?area_domain="
     url = API + domain
-    xhtml = urllib2.urlopen(url,timeout=5).read()
+    try:
+        xhtml = urllib2.urlopen(url,timeout=5).read()
+    except:
+        return
     r1 = xhtml.find('211')      # 字符串表示 已经被注册
     r2 = xhtml.find('210')      # 字符串表示 还未被注册
     if r2 != -1:
