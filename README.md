@@ -2,6 +2,8 @@
 
 批量检测域名是否被注册
 
+## 检查原理
+
 通过 api 接口 http://panda.www.net.cn/cgi-bin/check.cgi?area_domain= 查询域名状态
 
 
@@ -18,3 +20,20 @@
     </property>
 
 返回内容中，状态为 211 表示域名已经被注册， 状态为 210 表示域名可以注册。
+
+## 脚本运行
+
+    [root@itdhz ~]# python register_domain.py &
+    
+后台运行程序，然后当前目录会生成 domain_enable.txt 文件，文件中记录可以注册的5位字母的域名。
+
+    [root@itdhz ~]# tail -f domain_enable.txt
+    bhuuv.com
+    bhuuw.com
+    bhuux.com
+    bhuuy.com
+    bhuuz.com
+    bhuvb.com
+    bhuvc.com
+    bhuvd.com
+    bhuvf.com
