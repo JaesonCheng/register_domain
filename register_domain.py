@@ -4,7 +4,7 @@
 # Date 2017-05-16
  
 import urllib2
-from multiprocessing import Pool as ThreadPool
+from multiprocessing import Pool
 import itertools as its
 
 def writelog(mfile,message):
@@ -24,19 +24,19 @@ def checkdomainstatus(domain):
     r1 = xhtml.find('211')      # 字符串表示 已经被注册
     r2 = xhtml.find('210')      # 字符串表示 还未被注册
     if r2 != -1:
-         writelog('unregisterdomain.txt',domain+'\n')
+         writelog('domain_enable.txt',domain+'\n')
     #else:
     #    if r1 != -1:
-    #        writelog('unknowndomain.txt',domain+'\n')
+    #        writelog('domain_unkown.txt',domain+'\n')
     #    else:
-    #        writelog('registerdomain.txt',domain+'\n')
+    #        writelog('domain_disable.txt',domain+'\n')
 
 if __name__ == "__main__":
     words = 'abcdefghijklmnopqrstuvwxyz'
     len = 5
     suffix = '.com'
     domains = createdomain(words,len,suffix)
-    task_pool = ThreadPool(5)
+    task_pool = Pool(5)
     results = task_pool.map(checkdomainstatus,domains)
     task_pool.close()
     task_pool.join()
