@@ -23,7 +23,7 @@
 
 ## 脚本运行
 
-    [root@itdhz ~]# python register_domain.py &
+    [root@itdhz ~]# python register_domain.py &
     
 后台运行程序，然后当前目录会生成 domain_enable.txt 文件，文件中记录可以注册的5位字母的域名。
 
