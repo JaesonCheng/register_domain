@@ -3,6 +3,7 @@
 ## 新网
 
 url = 'http://panda.www.net.cn/cgi-bin/check.cgi'
+
 data = {'area_domain':'itdhz.com'}
 
 浏览器直接请求
