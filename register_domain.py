@@ -27,6 +27,7 @@ def checkdomainstatus(domain):
     r1 = xhtml.find(r'<original>211')      # 字符串表示 已经被注册
     r2 = xhtml.find(r'<original>210')      # 字符串表示 还未被注册
     if r2 != -1:
+        # print domain
         writelog('domain_enable.txt',domain+'\n')
 
 if __name__ == "__main__":
