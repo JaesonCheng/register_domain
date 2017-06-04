@@ -24,15 +24,10 @@ def checkdomainstatus(domain):
         xhtml = urllib2.urlopen(url,timeout=5).read()
     except:
         return
-    r1 = xhtml.find('211')      # 字符串表示 已经被注册
-    r2 = xhtml.find('210')      # 字符串表示 还未被注册
+    r1 = xhtml.find(r'<original>211')      # 字符串表示 已经被注册
+    r2 = xhtml.find(r'<original>210')      # 字符串表示 还未被注册
     if r2 != -1:
-         writelog('domain_enable.txt',domain+'\n')
-    #else:
-    #    if r1 != -1:
-    #        writelog('domain_unkown.txt',domain+'\n')
-    #    else:
-    #        writelog('domain_disable.txt',domain+'\n')
+        writelog('domain_enable.txt',domain+'\n')
 
 if __name__ == "__main__":
     words = 'abcdefghijklmnopqrstuvwxyz'
