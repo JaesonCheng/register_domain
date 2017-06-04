@@ -10,4 +10,11 @@ data = {'area_domain':'itdhz.com'}
 
 http://panda.www.net.cn/cgi-bin/check.cgi?area_domain=itdhz.com
 
-返回结果： xml 格式文件
+返回结果： xml 格式
+
+  <?xml version="1.0" encoding="gb2312"?>
+  <property>
+  <returncode>200</returncode>
+  <key>itdhz.com</key>
+  <original>211 : Domain name is not available</original>
+  </property>
