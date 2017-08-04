@@ -37,3 +37,22 @@
     bhuvc.com
     bhuvd.com
     bhuvf.com
+
+
+## 用代理爬
+
+网络上很多免费的代理，大家也可以添加代码不停的切换代理去请求这个接口，以避免被源站封杀。
+
+知道的代理有这么几家，大家可以用试试
+
+```
+http://www.xicidaili.com/     # 西刺代理
+http://www.kuaidaili.com/     # 快代理
+http://ip.zdaye.com/          # 站大爷
+http://www.xdaili.cn/         # 讯代理
+http://www.swei360.com/       # 360代理
+http://www.mayidaili.com/     # 蚂蚁代理
+http://www.ip3366.net/        # 云代理      
+http://www.dailiyun.com/      # 代理云
+http://www.89ip.cn/           # 流年免费代理
+```
